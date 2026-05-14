@@ -1,1 +1,108 @@
-/* Add styles here */
+:root {
+  /* Light Theme - Vibrant & Energetic */
+  --bg-primary: oklch(98% 0.01 200);
+  --bg-secondary: oklch(100% 0 0);
+  --text-primary: oklch(20% 0.02 200);
+  --text-secondary: oklch(45% 0.02 200);
+  --accent-primary: oklch(65% 0.2 250);
+  --accent-secondary: oklch(70% 0.15 190);
+  --accent-glow: oklch(65% 0.2 250 / 0.4);
+  --card-bg: oklch(100% 0 0 / 0.8);
+  --card-border: oklch(90% 0.01 200);
+  --shadow-soft: 
+    0 2px 4px oklch(0% 0 0 / 0.05),
+    0 8px 16px oklch(0% 0 0 / 0.05);
+  --shadow-deep:
+    0 10px 20px oklch(0% 0 0 / 0.1),
+    0 20px 40px oklch(0% 0 0 / 0.1);
+  --transition-speed: 0.3s;
+  --noise-opacity: 0.03;
+}
+
+body.dark-theme {
+  /* Dark Theme - Deep & Sophisticated */
+  --bg-primary: oklch(15% 0.02 250);
+  --bg-secondary: oklch(20% 0.02 250);
+  --text-primary: oklch(95% 0.01 250);
+  --text-secondary: oklch(75% 0.01 250);
+  --accent-primary: oklch(75% 0.15 190);
+  --accent-secondary: oklch(65% 0.2 250);
+  --accent-glow: oklch(75% 0.15 190 / 0.4);
+  --card-bg: oklch(22% 0.02 250 / 0.9);
+  --card-border: oklch(30% 0.02 250);
+  --shadow-soft: 
+    0 2px 4px oklch(0% 0 0 / 0.3),
+    0 8px 16px oklch(0% 0 0 / 0.3);
+  --shadow-deep:
+    0 10px 20px oklch(0% 0 0 / 0.5),
+    0 20px 40px oklch(0% 0 0 / 0.5);
+  --noise-opacity: 0.05;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Noise Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: var(--noise-opacity);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1;
+}
+
+header {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
