@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Portfolio Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Investment Portfolio Dashboard</h1>
+        </header>
+        <main>
+            <section class="summary">
+                <div class="card">
+                    <h2>Total Investment</h2>
+                    <p>S$400,000</p>
+                </div>
+                <div class="card">
+                    <h2>Projected Growth</h2>
+                    <p id="projected-growth">S$0</p>
+                </div>
+                <div class="card">
+                    <h2>Total Value (5 Years)</h2>
+                    <p id="total-value">S$400,000</p>
+                </div>
+            </section>
+            <section class="allocation">
+                <h2>Asset Allocation</h2>
+                <div class="allocation-item">
+                    <label for="stocks">Stocks</label>
+                    <input type="range" id="stocks" name="stocks" min="0" max="100" value="50">
+                    <span id="stocks-value">50%</span>
+                </div>
+                <div class="allocation-item">
+                    <label for="bonds">Bonds</label>
+                    <input type="range" id="bonds" name="bonds" min="0" max="100" value="30">
+                    <span id="bonds-value">30%</span>
+                </div>
+                <div class="allocation-item">
+                    <label for="real-estate">Real Estate</label>
+                    <input type="range" id="real-estate" name="real-estate" min="0" max="100" value="15">
+                    <span id="real-estate-value">15%</span>
+                </div>
+                <div class="allocation-item">
+                    <label for="crypto">Crypto</label>
+                    <input type="range" id="crypto" name="crypto" min="0" max="100" value="5">
+                    <span id="crypto-value">5%</span>
+                </div>
+            </section>
+            <section class="chart-container">
+                <h2>Projected Growth Over 5 Years</h2>
+                <canvas id="growth-chart"></canvas>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>

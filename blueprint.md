@@ -1,32 +1,20 @@
-# Project Blueprint: Toto Random Number Generator
+# Project Blueprint
 
 ## Overview
 
-A modern, responsive web application for generating random "Toto" numbers. It features a vibrant UI, persistent Day/Night themes, and is built using native Web Components and modern CSS standards.
+This project is a web application that helps users visualize and track a hypothetical investment portfolio.
 
 ## Implemented Features
 
-*   **Initial Setup:** Basic project structure (HTML, CSS, JS).
-*   **Web Components:** A functional `random-number-generator` and `theme-toggle` component.
-*   **Design System:** Integrated Day/Night themes using CSS variables (`oklch`).
-*   **Theme Toggle:** Persistent theme selection with `localStorage` and system preference detection.
-*   **Modern UI:** Vibrant aesthetics with gradients, multi-layered shadows, and responsive layout.
+*   **Initial Setup:** A basic HTML, CSS, and JavaScript project structure.
+*   **Toto Random Number Generator:** A component to generate random numbers.
 
-## Current Task: Day/Night Mode & UI Overhaul
+## Current Task: Investment Portfolio Dashboard
 
-### Goal
-Implement a persistent theme toggle and modernize the visual design.
-
-### Plan
-1.  **Global Styles:** Define `:root` and `.dark-theme` variables in `style.css`. Add a noise texture and base layout styles.
-2.  **Theme Toggle:** Create a `<theme-toggle>` Web Component in `main.js`.
-3.  **Generator Refactor:** Upgrade `random-number-generator` with modern aesthetics (gradients, shadows, animations).
-4.  **Layout Update:** Refine `index.html` for a polished, centered hero experience.
-5.  **Persistence:** Ensure the theme choice is saved and loaded from `localStorage`.
-
-## Design Specifications
-
-*   **Colors:** Vibrant `oklch` hues (e.g., brand-primary, accent-glow).
-*   **Typography:** Expressive sans-serif stacks (Inter, system-ui).
-*   **Effects:** Multi-layered drop shadows, glassmorphism-inspired cards.
-*   **Interactivity:** Smooth transitions (300ms ease), button hover "glow".
+*   **Goal:** Create a dashboard to visualize and track a hypothetical investment portfolio of S$400,000 with a 5-year growth plan.
+*   **Plan:**
+    1.  Create the user interface for the dashboard.
+    2.  Display a summary of the portfolio's performance.
+    3.  Allow users to allocate investments across different asset classes.
+    4.  Visualize the projected growth over 5 years with a chart.
+    5.  Link to the new portfolio page from the main page.
